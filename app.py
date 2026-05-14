@@ -4,7 +4,7 @@ import pandas as pd
 # ==========================================
 # 1. PAGE CONFIGURATION
 # ==========================================
-st.set_page_config(page_title="Partner Directory Dashboard", page_icon="🤝", layout="wide")
+st.set_page_config(page_title="DACH Integration Partner Dashboard", page_icon="🤝", layout="wide")
 
 # ==========================================
 # 2. DATA LOADING & ERROR HANDLING
