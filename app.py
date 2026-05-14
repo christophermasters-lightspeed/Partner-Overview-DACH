@@ -10,7 +10,7 @@ st.set_page_config(page_title="Partner Directory Dashboard", page_icon="🤝", l
 # 2. DATA LOADING & ERROR HANDLING
 # ==========================================
 # REPLACE THIS URL with your published CSV link from Google Sheets
-SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQWmt5qh-UX63deRAlZZIlQe-elkrhUTkMgNNjxAlQ9HiWqUkanUEq9G7scOliRj3V7r-yD4xYp9yKb/pub?gid=313483319&single=true&output=csv"
+SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQWmt5qh-UX63deRAlZZIlQe-elkrhUTkMgNNjxAlQ9HiWqUkanUEq9G7scOliRj3V7r-yD4xYp9yKb/pub?gid=1474258036&single=true&output=csv"
 
 @st.cache_data(ttl=600) # Caches the data for 10 minutes to speed up the app
 def load_data(url):
