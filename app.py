@@ -70,21 +70,22 @@ for col in filter_columns:
     if col in raw_df.columns:
         # Convert all to strings, handle blanks, and sort alphabetically
         unique_values = [str(x) for x in raw_df[col].unique() if str(x).strip() != ""]
-        options = ["All"] + sorted(unique_values)
+        options = sorted(unique_values) # Removed "All" - empty multiselect handles this
         
-        # Create the dropdown and save the choice
-        user_selections[col] = st.sidebar.selectbox(f"{col}", options=options)
+        # Create the multiselect dropdown and save the choices (returns a list)
+        user_selections[col] = st.sidebar.multiselect(f"{col}", options=options)
 
 # ==========================================
 # 5. APPLY FILTERS TO DATA
 # ==========================================
 filtered_df = raw_df.copy()
 
-# Apply Categorical Dropdown Filters
+# Apply Categorical Multiselect Filters
 for col, selected_val in user_selections.items():
-    if selected_val != "All":
-        # Convert dataframe column to string to ensure a safe match
-        filtered_df = filtered_df[filtered_df[col].astype(str) == selected_val]
+    # If the user selected at least one option (the list is not empty)
+    if len(selected_val) > 0:
+        # Check if the dataframe column value is IN the list of selected options
+        filtered_df = filtered_df[filtered_df[col].astype(str).isin(selected_val)]
 
 # Apply Global Text Search Filter
 if search_query:
