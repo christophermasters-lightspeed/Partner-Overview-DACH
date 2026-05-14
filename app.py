@@ -36,7 +36,7 @@ raw_df = load_data(SHEET_CSV_URL)
 # ==========================================
 # 3. MAIN UI & DASHBOARD HEADER
 # ==========================================
-st.title("🤝 Partner Directory Dashboard")
+st.title("DACH Integration Partner Dashboard")
 st.markdown("Easily search, filter, and analyze your partner network data.")
 st.divider()
 
